@@ -12,6 +12,7 @@ const connection = mysql.createConnection({
   database : 'join_us'
 });
 
+// HOME PAGE***************************************************************
 app.get("/", function(req, res){
 	const q = 'SELECT COUNT(*) AS count FROM users';
 	connection.query(q, function(err, result){
@@ -22,19 +23,15 @@ app.get("/", function(req, res){
 	})
 });
 
+// SUBMISSION ACTION AND SEND, MUST CHANGE TO RENDER VIA EJS PROTOCOLS ****
 app.post('/register', function(req, res){
-	console.log("POST REQUEST SENT TO /REGISTER!", req.body.email);
-});
-
-app.get("/joke", function(req, res){
-	const joke = "What do you call a dog that can do magic tricks? A Labracadabrador!";
-	res.send(joke);
-})
-
-app.get("/random_num", function(req, res){
-  let num = Math.floor(Math.random() * 10) + 1;
-	console.log(num);
-  res.send(`Your lucky number is ${num}!`);
+	const person = {
+		email: req.body.email
+	};
+	connection.query('INSERT INTO users SET ?', person, function(err, result){
+		if(err) throw err;
+		res.send("Thanks for signing up!")
+	})
 });
 
 app.listen(3000, function () {
