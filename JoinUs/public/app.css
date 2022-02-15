@@ -1,0 +1,52 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+  text-align: center;
+  text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
+  font-family: 'Roboto', sans-serif;
+  color: rgb(66,69,86);
+  height: 100%;
+  background-image: url('http://i.imgur.com/BJP2Q1j.jpg');
+  background-size: cover;
+  font-weight: 100;
+	font-size: 16px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+h1{
+  margin: 0;
+  font-size: 16rem;
+  line-height: 14rem;
+  font-weight: 100;
+}
+
+p {
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+.form {
+	line-height: 1.5;
+	border: none;
+	border-bottom: 3px solid #ebebeb;
+	margin-top: 100px;
+	width: 700px;
+	font-size: 2em;
+	color: black;
+	padding: 0.4rem 0.8rem;
+}
+
+button{
+	font-size: 2em;
+	border: none;
+	padding: 0.8rem 0.8rem;
+}
